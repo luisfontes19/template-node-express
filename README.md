@@ -4,7 +4,11 @@
 
 You can set up databases per environment. Just create a new file under /db with the name of the environment to be used. Check /db/development.ts for how to structure the file. configs from /db/global.ts will be applied to all, you can override them.
 
-Although typeorm is used with active directory, you should extend our MainEntity instead of BaseEntity. This will provide a mechanism to validate errors on save, and only save of no errors. You can disable this by changing the variable applyValidations of the model.
+## MOdels
+
+Although typeorm is used with active directory, you should extend our MainEntity instead of BaseEntity. This will provide a mechanism to validate errors on save, and only save if no errors. You can disable this by changing the variable applyValidations of the model.
+You can check if save was successfull by checking if the model has errors (ex: user.errors ? failed : succeeded)
+
 
 ## Controllers
 

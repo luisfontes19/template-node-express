@@ -1,6 +1,10 @@
 import cp from "child_process";
 import Database from "./Database";
 
+//typeorm cli expects specific files to load a db connection 
+//since we have our own structure we needed to adapt it... 
+//This also makes easier to run migrations in js (build version) and ts (dev) seamlessly
+
 const op = process.argv[2]
 
 const dbFileName = Database.configFileName()

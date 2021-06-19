@@ -37,7 +37,7 @@ export const initRouter = (app: any) => {
   return { get, post, patch, put, del, options, head, trace, all, render };
 }
 
-
+//TODO: replace this by a routine that prints all routes defined in express
 export const printRoutes = () => {
   console.table(routes);
 }

@@ -21,9 +21,4 @@ export default class BaseController {
   protected async beforeAction(): Promise<boolean> {
     return true;
   }
-
-  protected getUserFromReq() {
-    return this.req.user as User;
-  }
-
 }
