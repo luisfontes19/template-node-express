@@ -19,7 +19,12 @@ export const initRouter = (app: any) => {
 
       //we can use validations and if doesn't pass here move forward
       const success = await instance.beforeAction();
-      if (success) instance[action]();
+
+      let r = undefined;
+      if (success) r = await instance[func](); //call the actual endpoint method
+
+      //fallback in case the action method doesn't return a reply. Use the return value of the method and send it in the response
+      if (!res.writableEnded) res.send(r)
     });
   }
 
