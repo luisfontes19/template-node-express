@@ -24,7 +24,7 @@ export const initRouter = (app: any) => {
       if (success) r = await instance[func](); //call the actual endpoint method
 
       //fallback in case the action method doesn't return a reply. Use the return value of the method and send it in the response
-      if (!res.writableEnded) res.send(r)
+      if (!res.headersSent) res.send(r)
     });
   }
 
